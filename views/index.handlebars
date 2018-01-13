@@ -1,0 +1,52 @@
+<img src="/assets/img/burger.png" alt="tiny bob holding his burger in a red and white checkered apron" />
+
+<h1>Eat-Da-Burger!</h1>
+
+<div class="wrapper">
+    {{!-- UNDEVOURED --}}
+    <div class="burgers" id="to-eat">
+        {{#each burgers}} 
+            {{#unless this.devoured}}
+                <div class="burger">
+                    <p class="burger-name">{{this.burger_name}}</p>
+                    
+                    <form method="POST" action="api/burgers/{{this.id}}?_method=PUT">
+                        <input type="hidden" name="devoured" value="true" />
+                        <button id="devour">Devour it!</button>
+                    </form>
+                    
+                    {{!-- {{> burgers/delete-burger}} --}}
+                </div>
+            {{/unless}}
+        {{/each}}
+    </div>
+    
+    {{!-- DEVOURED --}}
+    <div class="burgers" id="eaten">
+        {{#each burgers}}
+            {{#if this.devoured}}
+                <div class="burger">
+                    <p class="burger-name">{{this.burger_name}}</p>
+                
+                    <form method="POST" action="api/burgers/{{this.id}}?_method=PUT">
+                        <input type="hidden" name="devoured" value="false" />
+                        <button id="undevour">Throw it up!</button>
+                    </form>
+
+                    {{!-- {{> burgers/delete-burger}} --}}
+
+                </div>
+            {{/if}}
+        {{/each}}
+    </div>
+</div>
+
+<p>
+    Enter a burger you want to eat,
+    <br /> then click "Submit"!
+</p>
+
+<form id="add-burger" method="POST">
+    <input type="text" name="burger" id="burger-name" />
+    <button type="submit" id="create-burger">Submit</button>
+</form>

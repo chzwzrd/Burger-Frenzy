@@ -1,0 +1,52 @@
+body {
+    box-sizing: border-box;
+    /* background-color: #e7e7e2; */
+    /* background-color: #fced26; */
+    background-color: #ffe23b;
+    font-family: 'Montserrat';
+    margin: 20px;
+}
+
+.container {
+    text-align: center;
+}
+
+img {
+    width: 200px;
+    margin-bottom: -10px;
+}
+
+.wrapper {
+    width: 500px;
+    margin: 30px auto;
+    display: grid;
+    grid-template: auto / repeat(2, 1fr);
+}
+
+.burgers {
+    padding: 20px 40px;
+}
+
+#to-eat {
+    background-color: rgb(81, 226, 219);
+}
+
+#eaten {
+    background-color: rgb(91, 161, 218);
+}
+
+.burger {
+    margin-bottom: 25px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+.burger-name {
+    margin-bottom: 3px;
+}
+
+#add-burger {
+    margin-bottom: 100px;
+}
