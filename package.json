@@ -1,7 +1,7 @@
 {
   "name": "burger",
   "version": "1.0.0",
-  "description": "Week 14 Homework",
+  "description": "Week 15 Homework",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
