@@ -1,26 +1,13 @@
-var orm = require('../config/orm');
-
-var burger = {
-    selectAll: (cb) => {
-        orm.selectAll('burgers', (res) => {
-            cb(res);
-        });
-    },
-    insertOne: (cols, vals, cb) => {
-        orm.insertOne('burgers', cols, vals, (res) => {
-            cb(res);
-        });
-    },
-    updateOne: (objColsVals, condition, cb) => {
-        orm.updateOne('burgers', objColsVals, condition, (res) => {
-            cb(res);
-        });
-    },
-    deleteOne: (condition, cb) => {
-        orm.deleteOne('burgers', condition, (res) => {
-            cb(res);
-        });
-    }
+module.exports = (sequelize, DataTypes) => {
+    var Burger = sequelize.define('Burger', {
+        burger_name: {
+            type: DataTypes.STRING,
+            len: [1]
+        },
+        devoured: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        }
+    });
+    return Burger;
 };
-
-module.exports = burger;
