@@ -29,7 +29,7 @@ app.use('/', routes);
 
 // LISTENER
 // =====================================================================================
-models.sequelize.sync({ force: isDev }).then(() => {
+models.sequelize.sync({ force: true }).then(() => {
     models.Burger.bulkCreate([
         {
             burger_name: "The Hulk Hogan",
